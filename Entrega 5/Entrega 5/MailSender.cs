@@ -22,5 +22,15 @@ namespace Entrega_5
             Thread.Sleep(2000);
         }
 
+
+        //Paso 1: Creamos el delegate para verificar el mail
+        public delegate void EmailSentEventHandler(object source, EventArgs args);
+        //Paso 2: Creamos el evento que se basa en el verificador del mail
+        public event EmailSentEventHandler EmailSent;
+        //Paso 3: Publicamos el evento (OnEmailSent)
+        protected virtual void OnEmailSent()
+        {
+            EmailSent(this, new EventArgs());
+        }
     }
 }

@@ -40,6 +40,7 @@ namespace Entrega_5
         }
 
 
+
         // Atributo BaseDatos
         public dataBase Data { get; }
 

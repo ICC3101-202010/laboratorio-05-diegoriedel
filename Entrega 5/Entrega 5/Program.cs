@@ -13,7 +13,7 @@ namespace Entrega_5
             Server server = new Server(database);
             MailSender mailSender = new MailSender();
             SMSSender smsSender = new SMSSender();
-
+            User user = new User();
 
             //Suscribir los que escuchan los eventos
             // Notar que para poder realizar las suscripciones es necesario tener instancias de las clases, y que los parametros
@@ -37,6 +37,8 @@ namespace Entrega_5
                     case "Registrarse":
                         Console.Clear();
                         server.Register();
+                        //Suponiendo que el mail si debería haber llegado
+                        user.OnEmailVerified();
                         break;
                     case "Cambiar contrasena":
                         Console.Clear();
